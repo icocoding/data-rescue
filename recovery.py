@@ -14,7 +14,7 @@ rescue_path = '/myfiles'
 back_up_dir = '/Volumes/backup'
 
 
-def recovery_files_on_disk(onlyListFiles=False):
+def recovery_files_on_disk(only_list_files=False):
     try:
         # 打开磁盘
         image_handle = pytsk3.Img_Info(disk_path)
@@ -69,7 +69,7 @@ def recovery_files_on_disk(onlyListFiles=False):
                     print(f"File: {file_path} Size: {file_size} DIR: {is_directory}")
 
                     # 备份文件
-                    if not onlyListFiles and not is_directory:
+                    if not only_list_files and not is_directory:
                         back_up(dir_path, file_name, file_size)
 
                     # 递归遍历目录
